@@ -1,0 +1,15 @@
+.profile__avatar-box {
+    max-width: 120px;
+    height: 120px;
+    background-image: url(../../../images/Vector-pencil.svg);
+    background-size: 26px 26px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__avatar-box {
+        margin: auto;
+        margin-bottom: 19px;
+    }
+}

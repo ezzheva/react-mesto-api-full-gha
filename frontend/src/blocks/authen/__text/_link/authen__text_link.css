@@ -1,0 +1,9 @@
+.authen__text_link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.authen__text_link:hover {
+  opacity: 0.6;
+}

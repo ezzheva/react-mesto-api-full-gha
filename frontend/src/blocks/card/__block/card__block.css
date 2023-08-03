@@ -1,0 +1,9 @@
+.card__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  color: #000000;
+  margin-right: 15px;
+  margin-left: 21px;
+}

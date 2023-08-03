@@ -1,0 +1,16 @@
+.authen__text {
+  width: 358px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  margin-top: 16px;
+  text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+  .authen__text {
+    width: 250px;
+    margin-top: 20px;
+  }
+}
