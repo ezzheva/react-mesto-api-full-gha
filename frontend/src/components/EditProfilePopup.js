@@ -28,8 +28,8 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
   }
 
   useEffect(() => {
-    setValues({name: values.name,about: values.about});
-  }, [currentUser, isOpen, setValues]);
+    setValues({name: values.name, about: values.about});
+  }, [ currentUser, isOpen, setValues ]);
 
   return (
     <PopupWithForm

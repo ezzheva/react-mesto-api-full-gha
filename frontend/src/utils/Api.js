@@ -112,7 +112,7 @@ class Api {
 
 /**обьект Api */
 const api = new Api({
-  url: "http://api.mesto.ezzheva.nomoreparties.co",
+  url: "https://api.mesto.ezzheva.nomoreparties.co",
   headers: {
     "Content-Type": "application/json",
   },

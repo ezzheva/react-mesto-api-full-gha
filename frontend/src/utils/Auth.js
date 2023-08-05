@@ -1,4 +1,4 @@
-export const BASE_URL = "http://api.mesto.ezzheva.nomoreparties.co";
+export const BASE_URL = "https://api.mesto.ezzheva.nomoreparties.co";
 
 /**проверка статуса ошибки*/
 const checkError = (res) => {

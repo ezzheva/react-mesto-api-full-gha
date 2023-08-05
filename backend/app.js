@@ -18,8 +18,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 app.use(cors({
   origin: [
-    'http://localhost:4000',
-    'http://mesto.ezzheva.nomoreparties.co'],
+    'http://localhost:3001',
+    'https://mesto.ezzheva.nomoreparties.co'],
 }));
 
 app.use(express.json());
