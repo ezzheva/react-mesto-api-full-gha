@@ -10,13 +10,17 @@ const limiter = require('./middlewares/rateLimit');
 const router = require('./routes');
 const handleError = require('./middlewares/handleError');
 
-const { PORT = 4000 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+  origin: [
+    'http://localhost:4000',
+    'http://mesto.ezzheva.nomoreparties.co'],
+}));
 
 app.use(express.json());
 app.use(bodyParser.json());
