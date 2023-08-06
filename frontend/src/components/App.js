@@ -219,6 +219,7 @@ function App() {
             userEmail={userEmail}
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
+            setCurrentUser={setCurrentUser}
           />
           <Routes>
             <Route

@@ -2,13 +2,14 @@ import React from "react";
 import headerLogo from "../images/Vector.svg";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 
-function Header({ userEmail, setLoggedIn, loggedIn }) {
+function Header({ userEmail, setLoggedIn, loggedIn, setCurrentUser }) {
   const navigate = useNavigate();
 
   function singOut() {
     localStorage.removeItem("token");
     navigate("/sign-in");
     setLoggedIn(false);
+    setCurrentUser({});
   }
 
   const location = useLocation();
