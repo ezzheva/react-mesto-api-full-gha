@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const limiter = require('./middlewares/rateLimit');
 const router = require('./routes');
 const handleError = require('./middlewares/handleError');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 
@@ -27,9 +27,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(limiter);
-app.use(cookieParser());
+app.use(requestLogger); // подключаем логгер запросов
 app.use(router);
 
+app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());
 app.use(handleError);
 
