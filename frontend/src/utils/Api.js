@@ -40,15 +40,15 @@ class Api {
   }
 
   /**получение с сервера данных */
-  // getUserInfo(token) {
-  //   return fetch(`${this._url}/users/me`, {
-  //     method: "GET",
-  //     headers: {
-  //       ...this._headers,
-  //       authorization: `Bearer ${token}`
-  //     },
-  //   }).then((res) => this._checkError(res));
-  // }
+  getUserInfo(token) {
+    return fetch(`${this._url}/users/me`, {
+      method: "GET",
+      headers: {
+        ...this._headers,
+        authorization: `Bearer ${token}`
+      },
+    }).then((res) => this._checkError(res));
+  }
   /**изменение данных с сервера */
   patchUserInfo(data, token) {
     return fetch(`${this._url}/users/me`, {

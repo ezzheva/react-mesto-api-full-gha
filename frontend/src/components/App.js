@@ -200,13 +200,14 @@ function App() {
   useEffect(() => {
     const jwt = localStorage.getItem("token");
     if (loggedIn) {
-      api.getInitialCards(jwt)
-        .then((cardData) => {
+      Promise.all([api.getUserInfo(jwt), api.getInitialCards(jwt)])
+        .then(([data, cardData]) => {
+          setCurrentUser(data);
           setCards(cardData.reverse());
         })
         .catch((err) => {
           console.log(err);
-      });
+        });
     }
   }, [loggedIn]);
 
