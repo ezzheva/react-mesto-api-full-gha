@@ -60,6 +60,7 @@ function App() {
             return;
           }
           setLoggedIn(true);
+          setCurrentUser(data);
           setUserEmail(data.email);
           navigate("/");
         })
@@ -199,14 +200,13 @@ function App() {
   useEffect(() => {
     const jwt = localStorage.getItem("token");
     if (loggedIn) {
-      Promise.all([api.getUserInfo(jwt), api.getInitialCards(jwt)])
-        .then(([data, cardData]) => {
-          setCurrentUser(data);
+      api.getInitialCards(jwt)
+        .then((cardData) => {
           setCards(cardData.reverse());
         })
         .catch((err) => {
           console.log(err);
-        });
+      });
     }
   }, [loggedIn]);
 
