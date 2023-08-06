@@ -8,23 +8,12 @@ function Register({ setIsSuccess, setIsInfoTooltipPopupOpen }) {
     email: "",
     password: "",
   });
-  // const [registerValue, setRegisterValue] = useState({
-  //   email: "",
-  //   password: "",
-  // });
+
   const navigate = useNavigate();
 
-  // function hendleChange(evt) {
-  //   const {name,value} = evt.target;
-  //   setRegisterValue({
-  //     ...registerValue,
-  //     [name]: value
-  //   })
-  // }
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    //const { email, password } = registerValue;
     Auth.register(values.email, values.password)
       .then((data) => {
         navigate("/sign-in");

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as Auth from "../utils/Auth";
 import { useForm } from "../hook/useForm";
 
-function Login({ handleLogin, setUserEmail, setIsInfoTooltipPopupOpen }) {
+function Login({ handleLogin, setUserEmail, setIsSuccess, setIsInfoTooltipPopupOpen }) {
   const { values, handleChange, setValues } = useForm({
     email: "",
     password: "",
@@ -20,11 +20,17 @@ function Login({ handleLogin, setUserEmail, setIsInfoTooltipPopupOpen }) {
         setUserEmail(values.email)
         handleLogin();
         navigate("/");
+        setIsSuccess(true);
       })
       .catch((err) => {
+        setIsSuccess(false);
         console.log(err);
+      })
+      .finally(() => {
+        setIsInfoTooltipPopupOpen(true);
       });
   }
+  
   useEffect(() => {
     setValues({ email: "", password: "" });
   }, [setValues]);
