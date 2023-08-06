@@ -234,13 +234,16 @@ function App() {
             <Route
               path="/sign-in"
               element={
-                <Login handleLogin={handleLogin} setUserEmail={setUserEmail} />
+                <Login 
+                  handleLogin={handleLogin}
+                  setUserEmail={setUserEmail}
+                  setIsInfoTooltipPopupOpen={setIsInfoTooltipPopupOpen}/>
               }
             />
             <Route path="*" element={<Navigate to="/sign-in" replace />} />
 
             <Route
-              path="/react-mesto-auth"
+              path="/"
               element={
                 loggedIn ? (
                   <Navigate to="/" replace />
