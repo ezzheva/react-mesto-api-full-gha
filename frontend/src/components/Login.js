@@ -22,10 +22,8 @@ function Login({ handleLogin, setUserEmail, setIsInfoTooltipPopupOpen }) {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
         setIsInfoTooltipPopupOpen(true);
+        console.log(err);
       });
   }
   useEffect(() => {
