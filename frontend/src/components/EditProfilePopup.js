@@ -9,7 +9,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
   // const [name, setName] = useState("");
   // const [about, setAbout] = useState("");
 
-  const { values, handleChange, setValues } = useForm({ name: "", about: "" });
+  const { values, handleChange, setValues } = useForm();
 
   // function handleChangeName(evt) {
   //   setName(evt.target.value);
@@ -29,7 +29,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
 
   useEffect(() => {
     if(currentUser){
-      setValues({name: values.name, about: values.about});
+      setValues({name: currentUser.name, about: currentUser.about});
   }}, [ currentUser, isOpen, setValues ]);
 
   return (
