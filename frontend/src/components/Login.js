@@ -20,14 +20,11 @@ function Login({ handleLogin, setUserEmail, setIsSuccess, setIsInfoTooltipPopupO
         setUserEmail(values.email)
         handleLogin();
         navigate("/");
-        setIsSuccess(true);
       })
       .catch((err) => {
         setIsSuccess(false);
-        console.log(err);
-      })
-      .finally(() => {
         setIsInfoTooltipPopupOpen(true);
+        console.log(err);
       });
   }
   
