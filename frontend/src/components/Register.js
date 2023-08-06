@@ -21,12 +21,11 @@ function Register({ setIsSuccess, setIsInfoTooltipPopupOpen }) {
       })
       .catch((err) => {
         setIsSuccess(false);
-        console.log(err);
-      })
-      .finally(() => {
         setIsInfoTooltipPopupOpen(true);
+        console.log(err);
       });
   }
+  
   useEffect(() => {
     setValues({ email: "", password: "" });
   }, [setValues]);
